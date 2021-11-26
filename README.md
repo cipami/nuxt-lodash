@@ -39,7 +39,7 @@ export default defineNuxtConfig({
 | Name       | Default | Description                                               |
 | ---------- | ------- | --------------------------------------------------------- |
 | `prefix`   | `false` | string to prepend before each function (false to disable) |
-| `excludes` | `[]`    | list of dunctions to exlude from auto-imports             |
+| `excludes` | `[]`    | list of functions to exlude from auto-imports             |
 
 ## 💻 Example
 
