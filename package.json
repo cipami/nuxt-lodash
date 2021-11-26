@@ -1,0 +1,37 @@
+{
+  "name": "nuxt-lodash",
+  "version": "0.1.0",
+  "description": "Lodash auto-import for Nuxt.js",
+  "keywords": [
+    "nuxt",
+    "nuxt-module",
+    "lodash",
+    "lodash-es"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cipami/nuxt-lodash"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "Michal Čípa",
+    "email": "michalcipa@gmail.com"
+  },
+  "exports": {
+    ".": "./module.mjs",
+    "./functions": {
+      "import": "./functions.mjs",
+      "types": "./functions.d.ts"
+    }
+  },
+  "type": "module",
+  "main": "./module.mjs",
+  "types": "./types.d.ts",
+  "devDependencies": {
+    "@nuxt/kit": "latest"
+  },
+  "dependencies": {
+    "lodash-es": "^4.17.21",
+    "@types/lodash-es": "^4.17.5"
+  }
+}
