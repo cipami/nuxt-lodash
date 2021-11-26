@@ -54,4 +54,4 @@ export default defineNuxtConfig({
 
 ## 📄 License
 
-[MIT License](https://github.com/cipami/nuxt-lodash/LICENSE) © 2021-PRESENT [Michal Čípa](https://github.com/cipami)
+[MIT License](https://github.com/cipami/nuxt-lodash/blob/master/LICENSE) © 2021-PRESENT [Michal Čípa](https://github.com/cipami)
