@@ -7,7 +7,11 @@ declare type NuxtLodashOptions = {
   /**
    * Array of lodash funcions to be exluded from auto-imports
    */
-  exlude?: string[];
+  exclude?: string[];
+  /**
+   * Iterable of string pairs to alias each function
+   */
+  alias?: Iterable<[string, string]>;
 };
 declare module "nuxt3" {
   interface NuxtConfig {

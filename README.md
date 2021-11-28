@@ -8,7 +8,7 @@
    
 ## 💡 About
 
-<h4>Lodash auto-import module for Nuxt3, supports custom prefix and list of exludes<h4>
+<h4><a href="https://lodash.com/">Lodash</a> auto-import module for <a href="https://nuxtjs.org/">Nuxt3</a>, supports custom prefix, list of exludes and list of aliases<h4>
    
 ## 📦 Install
 
@@ -28,6 +28,10 @@ export default defineNuxtConfig({
       {
         prefix: "use",
         exclude: ["map"],
+        alias: [
+          ["camelCase", "stringToCamelCase"], // will result it useStringToCamelCase
+          ["kebabCase", "stringToKebabCase"], // will result it useStringToKebabCase
+        ],
       },
     ],
   ],
@@ -40,6 +44,7 @@ export default defineNuxtConfig({
 | --------- | ------- | --------------------------------------------------------- |
 | `prefix`  | `false` | string to prepend before each function (false to disable) |
 | `exclude` | `[]`    | list of functions to exlude from auto-imports             |
+| `alias`   | `[]`    | list of aliases to rename specific functions              |
 
 ## 💻 Example
 

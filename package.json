@@ -1,6 +1,6 @@
 {
   "name": "nuxt-lodash",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Lodash auto-import for Nuxt.js",
   "keywords": [
     "nuxt",
@@ -16,13 +16,6 @@
   "author": {
     "name": "Michal Čípa",
     "email": "michalcipa@gmail.com"
-  },
-  "exports": {
-    ".": "./module.mjs",
-    "./functions": {
-      "import": "./functions.mjs",
-      "types": "./functions.d.ts"
-    }
   },
   "type": "module",
   "main": "./module.mjs",
