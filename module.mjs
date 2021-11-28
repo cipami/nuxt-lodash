@@ -4,7 +4,7 @@ import lodash from "lodash-es";
 
 export default defineNuxtModule({
   configKey: "lodash",
-  defaults: { prefix: "use", exclude: [] },
+  defaults: { prefix: false, exclude: [] },
   setup(options, nuxt) {
     const prefix = options.prefix || "";
     const exportsArray = [];
