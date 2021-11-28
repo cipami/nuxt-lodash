@@ -27,7 +27,7 @@ export default defineNuxtConfig({
       "nuxt-lodash",
       {
         prefix: "use",
-        excludes: ["map"],
+        exclude: ["map"],
       },
     ],
   ],
@@ -36,10 +36,10 @@ export default defineNuxtConfig({
 
 ## 🔨 Config
 
-| Name       | Default | Description                                               |
-| ---------- | ------- | --------------------------------------------------------- |
-| `prefix`   | `false` | string to prepend before each function (false to disable) |
-| `excludes` | `[]`    | list of functions to exlude from auto-imports             |
+| Name      | Default | Description                                               |
+| --------- | ------- | --------------------------------------------------------- |
+| `prefix`  | `false` | string to prepend before each function (false to disable) |
+| `exclude` | `[]`    | list of functions to exlude from auto-imports             |
 
 ## 💻 Example
 
