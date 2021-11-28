@@ -8,8 +8,8 @@
    
 ## 💡 About
 
-<h4><a href="https://lodash.com/">Lodash</a> auto-import module for <a href="https://nuxtjs.org/">Nuxt3</a>, supports custom prefix, list of exludes and list of aliases<h4>
-   
+[Lodash](https://lodash.com) auto-import module for [Nuxt3](https://nuxtjs.org).
+
 ## 📦 Install
 
 ```bash
@@ -29,8 +29,8 @@ export default defineNuxtConfig({
         prefix: "use",
         exclude: ["map"],
         alias: [
-          ["camelCase", "stringToCamelCase"], // will result it useStringToCamelCase
-          ["kebabCase", "stringToKebabCase"], // will result it useStringToKebabCase
+          ["camelCase", "stringToCamelCase"], // will result in useStringToCamelCase
+          ["kebabCase", "stringToKebabCase"], // will result in useStringToKebabCase
         ],
       },
     ],
@@ -59,4 +59,4 @@ export default defineNuxtConfig({
 
 ## 📄 License
 
-[MIT License](https://github.com/cipami/nuxt-lodash/blob/master/LICENSE) © 2021-PRESENT [Michal Čípa](https://github.com/cipami)
+[MIT License](https://github.com/cipami/nuxt-lodash/blob/master/LICENSE) © 2021 [Michal Čípa](https://github.com/cipami)
