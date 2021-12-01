@@ -1,4 +1,4 @@
- <h1>Nuxt 3 - lodash</h1>
+ <h1>Nuxt 3 - Lodash</h1>
  
 <p>
   <a href="https://www.npmjs.com/package/nuxt-lodash"><img src="https://badgen.net/npm/v/nuxt-lodash" alt="Version"></a>
@@ -8,7 +8,7 @@
    
 ## 💡 About
 
-[Lodash](https://lodash.com) auto-import module for [Nuxt3](https://nuxtjs.org).
+[Lodash](https://lodash.com) auto-import module for [Nuxt 3](https://nuxtjs.org).
 
 ## 📦 Install
 
@@ -29,8 +29,8 @@ export default defineNuxtConfig({
         prefix: "use",
         exclude: ["map"],
         alias: [
-          ["camelCase", "stringToCamelCase"], // will result in useStringToCamelCase
-          ["kebabCase", "stringToKebabCase"], // will result in useStringToKebabCase
+          ["camelCase", "stringToCamelCase"], // => useStringToCamelCase
+          ["kebabCase", "stringToKebabCase"], // => useStringToKebabCase
         ],
       },
     ],
@@ -40,11 +40,11 @@ export default defineNuxtConfig({
 
 ## 🔨 Config
 
-| Name      | Default | Description                                               |
-| --------- | ------- | --------------------------------------------------------- |
-| `prefix`  | `false` | string to prepend before each function (false to disable) |
-| `exclude` | `[]`    | list of functions to exlude from auto-imports             |
-| `alias`   | `[]`    | list of aliases to rename specific functions              |
+| Name      | Default | Description                                                                      |
+| --------- | ------- | -------------------------------------------------------------------------------- |
+| `prefix`  | `false` | String to prepend before each Lodash function (false to disable)                 |
+| `exclude` | `[]`    | Array of Lodash functions to exlude from auto-imports                            |
+| `alias`   | `[]`    | Array of array pairs to rename specific Lodash functions (doesn't affect prefix) |
 
 ## 💻 Example
 
@@ -52,11 +52,11 @@ export default defineNuxtConfig({
 <template>
   <div>{{ text }}</div>
 </template>
-<script setup lang="ts">
+<script setup>
   const text = useToUpper("it works!");
 </script>
 ```
 
 ## 📄 License
 
-[MIT License](https://github.com/cipami/nuxt-lodash/blob/master/LICENSE) © 2021 [Michal Čípa](https://github.com/cipami)
+[MIT License](https://github.com/cipami/nuxt-lodash/blob/master/LICENSE) © 2021 - [Michal Čípa](https://github.com/cipami)
