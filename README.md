@@ -1,4 +1,4 @@
- <h1>Nuxt 3 - Lodash</h1>
+ <h1>Lodash for Nuxt</h1>
  
 <p>
   <a href="https://www.npmjs.com/package/nuxt-lodash"><img src="https://badgen.net/npm/v/nuxt-lodash" alt="Version"></a>
@@ -8,7 +8,7 @@
    
 ## 💡 About
 
-[Lodash](https://lodash.com) auto-import module for [Nuxt 3](https://nuxtjs.org).
+[Lodash](https://lodash.com) auto-import module for [Nuxt](https://nuxtjs.org).
 
 ## 📦 Install
 
@@ -42,9 +42,9 @@ export default defineNuxtConfig({
 
 | Name      | Default | Description                                                                      |
 | --------- | ------- | -------------------------------------------------------------------------------- |
-| `prefix`  | `false` | String to prepend before each Lodash function (false to disable)                 |
+| `prefix`  | `use`   | String to prepend before each Lodash function (false to disable)                 |
 | `exclude` | `[]`    | Array of Lodash functions to exlude from auto-imports                            |
-| `alias`   | `[]`    | Array of array pairs to rename specific Lodash functions (doesn't affect prefix) |
+| `alias`   | `[]`    | Array of array pairs to rename specific Lodash functions (prefix is still added) |
 
 ## 💻 Example
 
