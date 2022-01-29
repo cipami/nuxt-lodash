@@ -16,35 +16,33 @@
 npm i nuxt-lodash -D
 ```
 
+## 🔨 Config
+
+| Name         | Default  | Description                                                                      |
+| ------------ | -------- | -------------------------------------------------------------------------------- |
+| `prefix`     | `use`    | String to prepend before each Lodash function (false to disable)                 |
+| `prefixSkip` | `['is']` | Functions that starts with keywords in this array will be skipped by prefix      |
+| `exclude`    | `[]`     | Array of Lodash functions to exlude from auto-imports                            |
+| `alias`      | `[]`     | Array of array pairs to rename specific Lodash functions (prefix is still added) |
+
 ## 💻 Usage
 
 ```js
-import { defineNuxtConfig } from "nuxt3";
+import { defineNuxtConfig } from 'nuxt3';
 
 export default defineNuxtConfig({
-  buildModules: [
-    [
-      "nuxt-lodash",
-      {
-        prefix: "use",
-        exclude: ["map"],
-        alias: [
-          ["camelCase", "stringToCamelCase"], // => useStringToCamelCase
-          ["kebabCase", "stringToKebabCase"], // => useStringToKebabCase
-        ],
-      },
-    ],
-  ],
+  buildModules: ['nuxt-lodash'],
+  lodash: {
+    prefix: 'use',
+    prefixSkip: ['is'],
+    exclude: ['map'],
+    alias: [
+      ['camelCase', 'stringToCamelCase'], // => useStringToCamelCase
+      ['kebabCase', 'stringToKebabCase'], // => useStringToKebabCase
+    ]
+  }
 });
 ```
-
-## 🔨 Config
-
-| Name      | Default | Description                                                                      |
-| --------- | ------- | -------------------------------------------------------------------------------- |
-| `prefix`  | `use`   | String to prepend before each Lodash function (false to disable)                 |
-| `exclude` | `[]`    | Array of Lodash functions to exlude from auto-imports                            |
-| `alias`   | `[]`    | Array of array pairs to rename specific Lodash functions (prefix is still added) |
 
 ## 💻 Example
 
@@ -53,7 +51,7 @@ export default defineNuxtConfig({
   <div>{{ text }}</div>
 </template>
 <script setup>
-  const text = useToUpper("it works!");
+  const text = useToUpper('it works!');
 </script>
 ```
 

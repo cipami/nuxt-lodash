@@ -7,6 +7,7 @@ export default defineNuxtConfig({
   ],
   lodash: {
     prefix: 'use',
+    prefixSkip: ['is'],
     exclude: ['map'],
     alias: [
       ['camelCase', 'stringToCamelCase'], // => useStringToCamelCase
