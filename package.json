@@ -1,7 +1,7 @@
 {
   "name": "nuxt-lodash",
-  "version": "1.2.0",
-  "description": "Lodash auto-import for Nuxt.js",
+  "version": "2.0.0",
+  "description": "Lodash for Nuxt",
   "keywords": [
     "nuxt",
     "nuxt-module",
@@ -12,19 +12,38 @@
     "type": "git",
     "url": "https://github.com/cipami/nuxt-lodash"
   },
-  "license": "MIT",
   "author": {
     "name": "Michal Čípa",
-    "email": "michalcipa@gmail.com"
+    "email": "michal.cipa@softlin.cz"
   },
+  "license": "MIT",
   "type": "module",
-  "main": "./module.mjs",
-  "types": "./types.d.ts",
-  "devDependencies": {
-    "@nuxt/kit": "latest"
+  "exports": {
+    ".": {
+      "import": "./dist/module.mjs",
+      "require": "./dist/module.cjs"
+    }
+  },
+  "main": "./dist/module.cjs",
+  "types": "./dist/types.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "prepack": "nuxt-module-build",
+    "play": "nuxi dev playground",
+    "play:build": "nuxi build playground",
+    "prepare": "nuxt-module-build --stub && nuxi prepare playground"
   },
   "dependencies": {
-    "lodash-es": "^4.17.21",
-    "@types/lodash-es": "^4.17.5"
+    "@nuxt/kit": "npm:@nuxt/kit-edge@latest",
+    "lodash-es": "^4.17.21"
+  },
+  "devDependencies": {
+    "@nuxt/module-builder": "latest",
+    "@nuxtjs/eslint-config-typescript": "latest",
+    "@types/lodash-es": "^4.17.5",
+    "eslint": "latest",
+    "nuxt3": "latest"
   }
 }
