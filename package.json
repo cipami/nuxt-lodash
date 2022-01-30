@@ -1,6 +1,6 @@
 {
   "name": "nuxt-lodash",
-  "version": "2.0.0",
+  "version": "2.1.1",
   "description": "Lodash for Nuxt",
   "keywords": [
     "nuxt",
@@ -33,16 +33,16 @@
     "prepack": "nuxt-module-build",
     "play": "nuxi dev playground",
     "play:build": "nuxi build playground",
-    "prepare": "nuxt-module-build --stub && nuxi prepare playground"
+    "play:prepare": "nuxt-module-build --stub && nuxi prepare playground"
   },
   "dependencies": {
     "@nuxt/kit": "npm:@nuxt/kit-edge@latest",
+    "@types/lodash-es": "^4.17.5",
     "lodash-es": "^4.17.21"
   },
   "devDependencies": {
     "@nuxt/module-builder": "latest",
     "@nuxtjs/eslint-config-typescript": "latest",
-    "@types/lodash-es": "^4.17.5",
     "eslint": "latest",
     "nuxt3": "latest"
   }
