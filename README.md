@@ -20,12 +20,12 @@ npm i nuxt-lodash -D
 
 | Name         | Default  | Description                                                                      |
 | ------------ | -------- | -------------------------------------------------------------------------------- |
-| `prefix`     | `use`    | String to prepend before each Lodash function (false to disable)                 |
+| `prefix`     | `'use'`    | String to prepend before each Lodash function (false to disable)                 |
 | `prefixSkip` | `['is']` | Functions that starts with keywords in this array will be skipped by prefix      |
 | `exclude`    | `[]`     | Array of Lodash functions to exlude from auto-imports                            |
 | `alias`      | `[]`     | Array of array pairs to rename specific Lodash functions (prefix is still added) |
 
-## 💻 Usage
+## 💻 Example - Config
 
 ```js
 import { defineNuxtConfig } from 'nuxt3';
@@ -44,14 +44,14 @@ export default defineNuxtConfig({
 });
 ```
 
-## 💻 Example
+## 🚀 Example - Usage
 
 ```html
 <template>
   <div>{{ text }}</div>
 </template>
 <script setup>
-  const text = useToUpper('it works!');
+const text = useToUpper('it works!');
 </script>
 ```
 
