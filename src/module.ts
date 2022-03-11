@@ -60,6 +60,9 @@ export default defineNuxtModule<ModuleOptions>({
     })
 
     nuxt.hook('autoImports:sources', (sources) => {
+      if (sources.find(i => i.from === 'lodash-es'))
+          return
+
       sources.push({ names, from: 'lodash-es' })
     })
   }
