@@ -37,7 +37,7 @@ export default defineNuxtModule<ModuleOptions>({
     alias: []
   },
   setup (options, nuxt) {
-    const names = []
+    const imports = []
     const prefix = options.prefix || ''
     const aliasMap = new Map(options.alias)
     const exludes = [...options.exclude, ...exculdeDefaults]
@@ -49,7 +49,7 @@ export default defineNuxtModule<ModuleOptions>({
           const isPrefix = !options.prefixSkip.some(key => alias.startsWith(key)) && prefix
           return isPrefix ? prefix + lodash.upperFirst(alias) : alias
         })()
-        names.push({ name, as })
+        imports.push({ name, as })
       }
     }
 
@@ -63,7 +63,7 @@ export default defineNuxtModule<ModuleOptions>({
       if (sources.find(i => i.from === 'lodash-es'))
           return
 
-      sources.push({ names, from: 'lodash-es' })
+      sources.push({ imports, from: 'lodash-es' })
     })
   }
 })
