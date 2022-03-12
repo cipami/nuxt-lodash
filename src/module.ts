@@ -6,18 +6,26 @@ export interface ModuleOptions {
   /**
    * Prefix to be added before every lodash function.
    * False to disable prefix
+   * 
+   * @defaultValue `use`
    */
   prefix?: false | string;
   /**
    * Functions that starts with keywords in this array will be skipped by prefix
+
+   * @defaultValue ['is']
    */
   prefixSkip?: string[];
   /**
    * Array of lodash funcions to be exluded from auto-imports
+   * 
+   * @defaultValue []
    */
   exclude?: string[];
   /**
    * Iterable of string pairs to alias each function
+   * 
+   * @defaultValue []
    */
   alias?: Iterable<[string, string]>;
 }
