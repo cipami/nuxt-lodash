@@ -19,5 +19,6 @@ export default [
   'plant',
   'next',
   'default',
-  'commit'
+  'commit',
+  'head'
 ]
