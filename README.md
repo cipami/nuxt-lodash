@@ -57,7 +57,7 @@ const text = useToUpper('it works!');
 import { defineNuxtConfig } from 'nuxt3';
 
 export default defineNuxtConfig({
-  buildModules: ['nuxt-lodash'],
+  modules: ['nuxt-lodash'],
   lodash: {
     prefix: 'use',
     prefixSkip: ['is'],
