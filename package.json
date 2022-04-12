@@ -44,10 +44,10 @@
   "devDependencies": {
     "@nuxt/module-builder": "latest",
     "@nuxtjs/eslint-config-typescript": "latest",
-    "@semantic-release/git": "^10.0.1",
-    "conventional-changelog-conventionalcommits": "^4.6.3",
+    "@semantic-release/git": "10.0.1",
+    "conventional-changelog-conventionalcommits": "4.6.3",
     "eslint": "latest",
     "nuxt3": "latest",
-    "semantic-release": "^19.0.2"
+    "semantic-release": "19.0.2"
   }
 }
