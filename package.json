@@ -33,7 +33,8 @@
     "prepack": "nuxt-module-build",
     "play": "nuxi dev playground",
     "play:build": "nuxi build playground",
-    "play:prepare": "nuxt-module-build --stub && nuxi prepare playground"
+    "play:prepare": "nuxt-module-build --stub && nuxi prepare playground",
+    "semantic-release": "semantic-release"
   },
   "dependencies": {
     "@nuxt/kit": "npm:@nuxt/kit-edge@latest",
