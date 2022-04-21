@@ -1,8 +1,8 @@
-import { defineNuxtConfig } from 'nuxt3'
+import { defineNuxtConfig } from 'nuxt'
 import nuxtLodash from '..'
 
 export default defineNuxtConfig({
-  buildModules: [
+  modules: [
     nuxtLodash
   ],
   lodash: {

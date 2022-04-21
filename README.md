@@ -21,7 +21,7 @@ npm i nuxt-lodash -D
 2. Add it to the `modules` section of your `nuxt.config`:
 
 ```ts
-import { defineNuxtConfig } from 'nuxt3'
+import { defineNuxtConfig } from 'nuxt'
 
 export default defineNuxtConfig({
   modules: ['nuxt-lodash']
@@ -54,7 +54,7 @@ const text = useToUpper('it works!');
 ## 💻 Example - Config
 
 ```ts
-import { defineNuxtConfig } from 'nuxt3';
+import { defineNuxtConfig } from 'nuxt';
 
 export default defineNuxtConfig({
   modules: ['nuxt-lodash'],

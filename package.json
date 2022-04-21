@@ -37,7 +37,7 @@
     "semantic-release": "semantic-release"
   },
   "dependencies": {
-    "@nuxt/kit": "npm:@nuxt/kit-edge@latest",
+    "@nuxt/kit": "^3.0.0-rc.1",
     "@types/lodash-es": "^4.17.5",
     "lodash-es": "^4.17.21"
   },
@@ -47,7 +47,7 @@
     "@semantic-release/git": "10.0.1",
     "conventional-changelog-conventionalcommits": "4.6.3",
     "eslint": "latest",
-    "nuxt3": "latest",
+    "nuxt": "^3.0.0-rc.1",
     "semantic-release": "19.0.2"
   }
 }
