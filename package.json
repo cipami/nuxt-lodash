@@ -47,7 +47,7 @@
     "@semantic-release/git": "10.0.1",
     "conventional-changelog-conventionalcommits": "5.0.0",
     "eslint": "latest",
-    "nuxt": "3.0.0-rc.3",
+    "nuxt": "3.0.0-rc.4",
     "semantic-release": "19.0.3"
   }
 }
