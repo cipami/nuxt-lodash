@@ -48,7 +48,7 @@ const text = useToUpper('it works!');
 | ------------ | -------- | -------------------------------------------------------------------------------- |
 | `prefix`     | `'use'`  | String to prepend before each Lodash function (false to disable)                 |
 | `prefixSkip` | `['is']` | Functions that starts with keywords in this array will be skipped by prefix      |
-| `exclude`    | `[]`     | Array of Lodash functions to exlude from auto-imports                            |
+| `exclude`    | `[]`     | Array of Lodash functions to exclude from auto-imports                            |
 | `alias`      | `[]`     | Array of array pairs to rename specific Lodash functions (prefix is still added) |
 
 ## 💻 Example - Config
