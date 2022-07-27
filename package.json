@@ -43,6 +43,7 @@
   },
   "devDependencies": {
     "@nuxt/module-builder": "latest",
+    "@nuxt/vite-builder": "^3.0.0-rc.6",
     "@nuxtjs/eslint-config-typescript": "latest",
     "@semantic-release/git": "^10.0.1",
     "conventional-changelog-conventionalcommits": "^5.0.0",
