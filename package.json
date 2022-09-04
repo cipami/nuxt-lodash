@@ -30,14 +30,14 @@
     "dist"
   ],
   "scripts": {
-    "prepack": "nuxt-module-build",
+    "prepack": "nuxt-module-build --stub && nuxi prepare playground && nuxt-module-build",
     "play": "nuxi dev playground",
     "play:build": "nuxi build playground",
     "play:prepare": "nuxt-module-build --stub && nuxi prepare playground",
     "semantic-release": "semantic-release"
   },
   "dependencies": {
-    "@nuxt/kit": "^3.0.0-rc.4",
+    "@nuxt/kit": "^3.0.0-rc.9",
     "@types/lodash-es": "^4.17.6",
     "lodash-es": "^4.17.21"
   },
@@ -47,7 +47,7 @@
     "@semantic-release/git": "^10.0.1",
     "conventional-changelog-conventionalcommits": "^5.0.0",
     "eslint": "latest",
-    "nuxt": "^3.0.0-rc.4",
-    "semantic-release": "^19.0.3"
+    "nuxt": "^3.0.0-rc.9",
+    "semantic-release": "^19.0.5"
   }
 }
