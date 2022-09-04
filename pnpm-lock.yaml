@@ -3,7 +3,6 @@ lockfileVersion: 5.4
 specifiers:
   '@nuxt/kit': ^3.0.0-rc.9
   '@nuxt/module-builder': latest
-  '@nuxt/vite-builder': ^3.0.0-rc.9
   '@nuxtjs/eslint-config-typescript': latest
   '@semantic-release/git': ^10.0.1
   '@types/lodash-es': ^4.17.6
@@ -20,7 +19,6 @@ dependencies:
 
 devDependencies:
   '@nuxt/module-builder': 0.1.7
-  '@nuxt/vite-builder': 3.0.0-rc.9_eslint@8.23.0
   '@nuxtjs/eslint-config-typescript': 11.0.0_eslint@8.23.0
   '@semantic-release/git': 10.0.1_semantic-release@19.0.5
   conventional-changelog-conventionalcommits: 5.0.0
@@ -622,58 +620,6 @@ packages:
 
   /@nuxt/ui-templates/0.3.2:
     resolution: {integrity: sha512-o0KRB0Mna/M5QxqMe+XvlfKczFz3CQMlkEr6Ztyphp+00jq1Ti0AXdq1XAt9hXI3LoZRh4+2vVX331UaIZQQzQ==}
-    dev: true
-
-  /@nuxt/vite-builder/3.0.0-rc.9_eslint@8.23.0:
-    resolution: {integrity: sha512-6tHUNKiGQVxGypq5qfr4wqv81+Dt/X0dRceeMZOB1pGdz+KgWGqRbXDILeRXH+R7Ew8c5XuNXdA7g6E9vxmvow==}
-    engines: {node: ^14.16.0 || ^16.11.0 || ^17.0.0 || ^18.0.0}
-    peerDependencies:
-      vue: ^3.2.38
-    dependencies:
-      '@nuxt/kit': 3.0.0-rc.9_bjmqfvitzn3prp6q33xiihmtom
-      '@rollup/plugin-replace': 4.0.0_rollup@2.79.0
-      '@vitejs/plugin-vue': 3.0.3_vite@3.0.9
-      '@vitejs/plugin-vue-jsx': 2.0.1_vite@3.0.9
-      autoprefixer: 10.4.8_postcss@8.4.16
-      chokidar: 3.5.3
-      cssnano: 5.1.13_postcss@8.4.16
-      defu: 6.1.0
-      esbuild: 0.15.7
-      escape-string-regexp: 5.0.0
-      estree-walker: 3.0.1
-      externality: 0.2.2
-      fs-extra: 10.1.0
-      get-port-please: 2.6.1
-      h3: 0.7.21
-      knitwork: 0.1.2
-      magic-string: 0.26.3
-      mlly: 0.5.14
-      ohash: 0.1.5
-      pathe: 0.3.5
-      perfect-debounce: 0.1.3
-      pkg-types: 0.3.4
-      postcss: 8.4.16
-      postcss-import: 15.0.0_postcss@8.4.16
-      postcss-url: 10.1.3_postcss@8.4.16
-      rollup: 2.79.0
-      rollup-plugin-visualizer: 5.8.1_rollup@2.79.0
-      ufo: 0.8.5
-      unplugin: 0.9.5_bjmqfvitzn3prp6q33xiihmtom
-      vite: 3.0.9
-      vite-node: 0.22.1
-      vite-plugin-checker: 0.5.0_eslint@8.23.0+vite@3.0.9
-      vue-bundle-renderer: 0.4.2
-    transitivePeerDependencies:
-      - eslint
-      - less
-      - sass
-      - stylus
-      - supports-color
-      - terser
-      - typescript
-      - vls
-      - vti
-      - webpack
     dev: true
 
   /@nuxt/vite-builder/3.0.0-rc.9_eslint@8.23.0+vue@3.2.38:
@@ -1337,22 +1283,6 @@ packages:
       - supports-color
     dev: true
 
-  /@vitejs/plugin-vue-jsx/2.0.1_vite@3.0.9:
-    resolution: {integrity: sha512-lmiR1k9+lrF7LMczO0pxtQ8mOn6XeppJDHxnpxkJQpT5SiKz4SKhKdeNstXaTNuR8qZhUo5X0pJlcocn72Y4Jg==}
-    engines: {node: ^14.18.0 || >=16.0.0}
-    peerDependencies:
-      vite: ^3.0.0
-      vue: ^3.0.0
-    dependencies:
-      '@babel/core': 7.18.13
-      '@babel/plugin-syntax-import-meta': 7.10.4_@babel+core@7.18.13
-      '@babel/plugin-transform-typescript': 7.18.12_@babel+core@7.18.13
-      '@vue/babel-plugin-jsx': 1.1.1_@babel+core@7.18.13
-      vite: 3.0.9
-    transitivePeerDependencies:
-      - supports-color
-    dev: true
-
   /@vitejs/plugin-vue-jsx/2.0.1_vite@3.0.9+vue@3.2.38:
     resolution: {integrity: sha512-lmiR1k9+lrF7LMczO0pxtQ8mOn6XeppJDHxnpxkJQpT5SiKz4SKhKdeNstXaTNuR8qZhUo5X0pJlcocn72Y4Jg==}
     engines: {node: ^14.18.0 || >=16.0.0}
@@ -1368,16 +1298,6 @@ packages:
       vue: 3.2.38
     transitivePeerDependencies:
       - supports-color
-    dev: true
-
-  /@vitejs/plugin-vue/3.0.3_vite@3.0.9:
-    resolution: {integrity: sha512-U4zNBlz9mg+TA+i+5QPc3N5lQvdUXENZLO2h0Wdzp56gI1MWhqJOv+6R+d4kOzoaSSq6TnGPBdZAXKOe4lXy6g==}
-    engines: {node: ^14.18.0 || >=16.0.0}
-    peerDependencies:
-      vite: ^3.0.0
-      vue: ^3.2.25
-    dependencies:
-      vite: 3.0.9
     dev: true
 
   /@vitejs/plugin-vue/3.0.3_vite@3.0.9+vue@3.2.38:
