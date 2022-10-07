@@ -1,7 +1,5 @@
 {
   "extends": [
-    "config:base",
-    ":disableDependencyDashboard",
-    ":preserveSemverRanges"
+    "@nuxtjs"
   ]
 }
