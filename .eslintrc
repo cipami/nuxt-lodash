@@ -5,6 +5,10 @@
   "rules": {
     "@typescript-eslint/no-unused-vars": [
       "off"
-    ]
+    ],
+    "semi": ["error", "always"],
+    "curly": ["error", "multi-line"],
+    "comma-dangle": ["error", "always-multiline"],
+    "no-multi-spaces": ["off"]
   }
 }

@@ -1,9 +1,8 @@
-import { defineNuxtConfig } from 'nuxt'
-import nuxtLodash from '..'
+import nuxtLodash from '..';
 
 export default defineNuxtConfig({
   modules: [
-    nuxtLodash
+    nuxtLodash,
   ],
   lodash: {
     prefix: 'use',
@@ -11,7 +10,7 @@ export default defineNuxtConfig({
     exclude: ['map'],
     alias: [
       ['camelCase', 'stringToCamelCase'], // => useStringToCamelCase
-      ['kebabCase', 'stringToKebabCase'] // => useStringToKebabCase
-    ]
-  }
-})
+      ['kebabCase', 'stringToKebabCase'], // => useStringToKebabCase
+    ],
+  },
+});
