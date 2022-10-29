@@ -4,7 +4,7 @@ import exculdeDefaults from './exclude'
 
 export interface ModuleOptions {
   /**
-   * Prefix to be added before every lodash function.
+   * Prefix to be added before every lodash function
    * False to disable prefix
    *
    * @defaultValue `use`
@@ -12,7 +12,7 @@ export interface ModuleOptions {
   prefix: false | string;
   /**
    * Functions that starts with keywords in this array will be skipped by prefix
-
+   *
    * @defaultValue ['is']
    */
   prefixSkip: string[];
@@ -28,6 +28,13 @@ export interface ModuleOptions {
    * @defaultValue []
    */
   alias: Iterable<[string, string]>;
+  /**
+   * Upper case first letter after prefix
+   * False to disable uppercasing
+   *
+   * @defaultValue true
+   */
+   upperAfterPrefix: boolean
 }
 
 export default defineNuxtModule<ModuleOptions>({
@@ -35,27 +42,25 @@ export default defineNuxtModule<ModuleOptions>({
     name: 'nuxt-lodash',
     configKey: 'lodash',
     compatibility: {
-      nuxt: '^3.0.0-rc.9'
+      nuxt: '^3.0.0-rc.12'
     }
   },
   defaults: {
     prefix: 'use',
     prefixSkip: ['is'],
     exclude: [],
-    alias: []
+    alias: [],
+    upperAfterPrefix: true
   },
   setup (options, nuxt) {
-    const prefix = options.prefix || ''
     const aliasMap = new Map<string, string>(options.alias)
     const exludes = [...options.exclude, ...exculdeDefaults]
 
-    for (const [name] of Object.entries(lodash)) {
+    for (const name of Object.keys(lodash)) {
       if (!exludes.includes(name)) {
         const alias = aliasMap.has(name) ? aliasMap.get(name)! : name
-        const as = (() => {
-          const isPrefix = !options.prefixSkip.some(key => alias.startsWith(key)) && prefix
-          return isPrefix ? prefix + lodash.upperFirst(alias) : alias
-        })()
+        const prefix = (!options.prefixSkip.some(key => alias.startsWith(key)) && options.prefix) || ''
+        const as = prefix ? prefix + (options.upperAfterPrefix ? lodash.upperFirst(alias) : alias) : alias
         addImports({ name, as, from: 'lodash-es' })
       }
     }

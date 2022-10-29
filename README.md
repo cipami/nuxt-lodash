@@ -21,11 +21,9 @@ npm i nuxt-lodash -D
 2. Add it to the `modules` section of your `nuxt.config`:
 
 ```ts
-import { defineNuxtConfig } from 'nuxt'
-
 export default defineNuxtConfig({
-  modules: ['nuxt-lodash']
-})
+  modules: ["nuxt-lodash"],
+});
 ```
 
 ## 🚀 Example
@@ -34,7 +32,7 @@ Use any [Lodash](https://lodash.com) methods in your Nuxt application, they will
 
 ```html
 <script setup>
-const text = useToUpper('it works!');
+  const text = useToUpper("it works!");
 </script>
 
 <template>
@@ -44,30 +42,32 @@ const text = useToUpper('it works!');
 
 ## 🔨 Config
 
-| Name         | Default  | Description                                                                      |
-| ------------ | -------- | -------------------------------------------------------------------------------- |
-| `prefix`     | `'use'`  | String to prepend before each Lodash function (false to disable)                 |
-| `prefixSkip` | `['is']` | Functions that starts with keywords in this array will be skipped by prefix      |
-| `exclude`    | `[]`     | Array of Lodash functions to exclude from auto-imports                            |
-| `alias`      | `[]`     | Array of array pairs to rename specific Lodash functions (prefix is still added) |
+| Name               | Default  | Description                                                                          |
+| ------------------ | -------- | ------------------------------------------------------------------------------------ |
+| `prefix`           | `'use'`  | String to prepend before each Lodash function (false to disable)                     |
+| `prefixSkip`       | `['is']` | Functions that starts with keywords in this array will be skipped by prefix          |
+| `upperAfterPrefix` | `true`   | If true it will automatically uppercase first letter after prefix (false to disable) |
+| `exclude`          | `[]`     | Array of Lodash functions to exclude from auto-imports                               |
+| `alias`            | `[]`     | Array of array pairs to rename specific Lodash functions (prefix is still added)     |
 
 ## 💻 Example - Config
 
 ```ts
-import { defineNuxtConfig } from 'nuxt';
-
 export default defineNuxtConfig({
   modules: ['nuxt-lodash'],
   lodash: {
-    prefix: 'use',
-    prefixSkip: ['is'],
+    prefix: '_',
+    prefixSkip: ['string'],
+    upperAfterPrefix: false,
     exclude: ['map'],
     alias: [
-      ['camelCase', 'stringToCamelCase'], // => useStringToCamelCase
-      ['kebabCase', 'stringToKebabCase'], // => useStringToKebabCase
-    ]
-  }
-});
+      ['camelCase', 'stringToCamelCase'], // => stringToCamelCase
+      ['kebabCase', 'stringToKebab'], // => stringToKebab
+      ['isDate', 'isLodashDate'], // => _isLodashDate
+    ],
+  },
+})
+
 ```
 
 ## 📄 License

@@ -1,17 +1,14 @@
-import { defineNuxtConfig } from 'nuxt'
-import nuxtLodash from '..'
-
 export default defineNuxtConfig({
-  modules: [
-    nuxtLodash
-  ],
+  modules: ['nuxt-lodash'],
   lodash: {
-    prefix: 'use',
-    prefixSkip: ['is'],
+    prefix: '_',
+    prefixSkip: ['string'],
+    upperAfterPrefix: true,
     exclude: ['map'],
     alias: [
-      ['camelCase', 'stringToCamelCase'], // => useStringToCamelCase
-      ['kebabCase', 'stringToKebabCase'] // => useStringToKebabCase
+      ['camelCase', 'stringToCamelCase'], // => stringToCamelCase
+      ['kebabCase', 'stringToKebab'], // => stringToKebab
+      ['isDate', 'isLodashDate'] // => _isLodashDate
     ]
   }
 })
