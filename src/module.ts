@@ -5,17 +5,20 @@ import exculdeDefaults from './exclude'
 export interface ModuleOptions {
   /**
    * Prefix to be added before every lodash function
-   * False to disable prefix
+   *
+   * `false` to disable uppercasing
    *
    * @defaultValue `use`
    */
   prefix: false | string;
   /**
-   * Functions that starts with keywords in this array will be skipped by prefix
+   * Functions that starts with this keywords will be skipped by prefix
    *
-   * @defaultValue ['is']
+   * `false` to disable uppercasing
+   *
+   * @defaultValue 'is'
    */
-  prefixSkip: string[];
+  prefixSkip: string | string[] | false;
   /**
    * Array of lodash funcions to be exluded from auto-imports
    *
@@ -30,7 +33,8 @@ export interface ModuleOptions {
   alias: Iterable<[string, string]>;
   /**
    * Upper case first letter after prefix
-   * False to disable uppercasing
+   *
+   * `false` to disable uppercasing
    *
    * @defaultValue true
    */
@@ -42,12 +46,12 @@ export default defineNuxtModule<ModuleOptions>({
     name: 'nuxt-lodash',
     configKey: 'lodash',
     compatibility: {
-      nuxt: '^3.0.0-rc.12'
+      nuxt: '^3.0.0'
     }
   },
   defaults: {
     prefix: 'use',
-    prefixSkip: ['is'],
+    prefixSkip: 'is',
     exclude: [],
     alias: [],
     upperAfterPrefix: true
@@ -55,11 +59,12 @@ export default defineNuxtModule<ModuleOptions>({
   setup (options, nuxt) {
     const aliasMap = new Map<string, string>(options.alias)
     const exludes = [...options.exclude, ...exculdeDefaults]
+    const prefixSkip = options.prefixSkip ? lodash.isArray(options.prefixSkip) ? options.prefixSkip : [options.prefixSkip] : []
 
     for (const name of Object.keys(lodash)) {
       if (!exludes.includes(name)) {
         const alias = aliasMap.has(name) ? aliasMap.get(name)! : name
-        const prefix = (!options.prefixSkip.some(key => alias.startsWith(key)) && options.prefix) || ''
+        const prefix = (!prefixSkip.some(key => alias.startsWith(key)) && options.prefix) || ''
         const as = prefix ? prefix + (options.upperAfterPrefix ? lodash.upperFirst(alias) : alias) : alias
         addImports({ name, as, from: 'lodash-es' })
       }
