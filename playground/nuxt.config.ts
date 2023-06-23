@@ -1,5 +1,6 @@
+import module from '..'
 export default defineNuxtConfig({
-  modules: ['nuxt-lodash'],
+  modules: [module],
   lodash: {
     prefix: '_',
     prefixSkip: ['string'],

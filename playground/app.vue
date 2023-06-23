@@ -1,5 +1,5 @@
 <script setup>
-const text = _toUpper('it works!')
+const text = _ToUpper('it works!')
 </script>
 <template>
   <div>{{ text }}</div>

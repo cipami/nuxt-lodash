@@ -1,6 +1,6 @@
 import { addImports, defineNuxtModule } from '@nuxt/kit'
 import * as lodash from 'lodash-es'
-import exculdeDefaults from './exclude'
+import excludeDefaults from './exclude'
 
 export interface ModuleOptions {
   /**
@@ -58,22 +58,16 @@ export default defineNuxtModule<ModuleOptions>({
   },
   setup (options, nuxt) {
     const aliasMap = new Map<string, string>(options.alias)
-    const exludes = [...options.exclude, ...exculdeDefaults]
+    const excludes = [...options.exclude, ...excludeDefaults]
     const prefixSkip = options.prefixSkip ? lodash.isArray(options.prefixSkip) ? options.prefixSkip : [options.prefixSkip] : []
 
     for (const name of Object.keys(lodash)) {
-      if (!exludes.includes(name)) {
+      if (!excludes.includes(name)) {
         const alias = aliasMap.has(name) ? aliasMap.get(name)! : name
         const prefix = (!prefixSkip.some(key => alias.startsWith(key)) && options.prefix) || ''
         const as = prefix ? prefix + (options.upperAfterPrefix ? lodash.upperFirst(alias) : alias) : alias
         addImports({ name, as, from: 'lodash-es' })
       }
     }
-
-    nuxt.hook('vite:extend', ({ config }) => {
-      config.optimizeDeps ||= {}
-      config.optimizeDeps.exclude ||= []
-      config.optimizeDeps.exclude.push('lodash-es')
-    })
   }
 })
