@@ -1,7 +1,6 @@
 import { addImports, defineNuxtModule } from '@nuxt/kit'
 import * as lodash from 'lodash-es'
 import excludeDefaults from './exclude'
-export * from 'lodash-es'
 
 export interface ModuleOptions {
   /**
@@ -67,7 +66,7 @@ export default defineNuxtModule<ModuleOptions>({
         const alias = aliasMap.has(name) ? aliasMap.get(name)! : name
         const prefix = (!prefixSkip.some(key => alias.startsWith(key)) && options.prefix) || ''
         const as = prefix ? prefix + (options.upperAfterPrefix ? lodash.upperFirst(alias) : alias) : alias
-        addImports({ name, as, from: 'nuxt-lodash' })
+        addImports({ name, as, from: 'nuxt-lodash/lodash' })
       }
     }
   }
