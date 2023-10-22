@@ -1,4 +1,4 @@
-import { addImports, defineNuxtModule } from '@nuxt/kit'
+import { addImports, createResolver, defineNuxtModule } from '@nuxt/kit'
 import * as lodash from 'lodash-es'
 import excludeDefaults from './exclude'
 
@@ -57,6 +57,8 @@ export default defineNuxtModule<ModuleOptions>({
     upperAfterPrefix: true
   },
   setup (options, nuxt) {
+    const { resolve } = createResolver(import.meta.url)
+
     const aliasMap = new Map<string, string>(options.alias)
     const excludes = [...options.exclude, ...excludeDefaults]
     const prefixSkip = options.prefixSkip ? lodash.isArray(options.prefixSkip) ? options.prefixSkip : [options.prefixSkip] : []
@@ -66,7 +68,7 @@ export default defineNuxtModule<ModuleOptions>({
         const alias = aliasMap.has(name) ? aliasMap.get(name)! : name
         const prefix = (!prefixSkip.some(key => alias.startsWith(key)) && options.prefix) || ''
         const as = prefix ? prefix + (options.upperAfterPrefix ? lodash.upperFirst(alias) : alias) : alias
-        addImports({ name, as, from: 'nuxt-lodash/lodash' })
+        addImports({ name, as, from: resolve('./runtime/lodash') })
       }
     }
   }

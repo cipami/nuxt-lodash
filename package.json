@@ -23,9 +23,6 @@
     ".": {
       "import": "./dist/module.mjs",
       "require": "./dist/module.cjs"
-    },
-    "./lodash": {
-      "import": "./dist/runtime/lodash.mjs"
     }
   },
   "main": "./dist/module.cjs",
