@@ -15,7 +15,7 @@
 1. Install `nuxt-lodash` as development dependency:
 
 ```bash
-npm i nuxt-lodash -D
+npx nuxi@latest module add lodash
 ```
 
 2. Add it to the `modules` section of your `nuxt.config`:
