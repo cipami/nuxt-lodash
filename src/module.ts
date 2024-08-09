@@ -66,12 +66,14 @@ export default defineNuxtModule<ModuleOptions>({
     const excludes = [...options.exclude, ...excludeDefaults]
     const prefixSkip = options.prefixSkip ? lodash.isArray(options.prefixSkip) ? options.prefixSkip : [options.prefixSkip] : []
 
-    const list: Import[] = Object.keys(lodash).filter(name => !excludes.includes(name)).map((name) => {
-      const alias = aliasMap.has(name) ? aliasMap.get(name)! : name
-      const prefix = (!prefixSkip.some(key => alias.startsWith(key)) && options.prefix) || ''
-      const as = prefix ? prefix + (options.upperAfterPrefix ? lodash.upperFirst(alias) : alias) : alias
-      return { name, as, from: resolve('./runtime/lodash') }
-    })
+    const list: Import[] = Object.keys(lodash)
+      .filter(name => !excludes.includes(name))
+      .map((name) => {
+        const alias = aliasMap.has(name) ? aliasMap.get(name)! : name
+        const prefix = (!prefixSkip.some(key => alias.startsWith(key)) && options.prefix) || ''
+        const as = prefix ? prefix + (options.upperAfterPrefix ? lodash.upperFirst(alias) : alias) : alias
+        return { name, as, from: resolve('./runtime/lodash') }
+      })
 
     // frontend side
     addImports(list)
