@@ -1,5 +1,8 @@
 import { addImports, createResolver, defineNuxtModule } from '@nuxt/kit'
 import * as lodash from 'lodash-es'
+
+import type { Import } from 'unimport'
+
 import excludeDefaults from './exclude'
 
 export interface ModuleOptions {
@@ -38,7 +41,7 @@ export interface ModuleOptions {
    *
    * @defaultValue true
    */
-   upperAfterPrefix: boolean
+  upperAfterPrefix: boolean
 }
 
 export default defineNuxtModule<ModuleOptions>({
@@ -63,13 +66,33 @@ export default defineNuxtModule<ModuleOptions>({
     const excludes = [...options.exclude, ...excludeDefaults]
     const prefixSkip = options.prefixSkip ? lodash.isArray(options.prefixSkip) ? options.prefixSkip : [options.prefixSkip] : []
 
-    for (const name of Object.keys(lodash)) {
-      if (!excludes.includes(name)) {
+    const list: Import[] = Object.keys(lodash)
+      .filter(name => !excludes.includes(name))
+      .map((name) => {
         const alias = aliasMap.has(name) ? aliasMap.get(name)! : name
         const prefix = (!prefixSkip.some(key => alias.startsWith(key)) && options.prefix) || ''
         const as = prefix ? prefix + (options.upperAfterPrefix ? lodash.upperFirst(alias) : alias) : alias
-        addImports({ name, as, from: resolve('./runtime/lodash') })
+        return { name, as, from: resolve('./runtime/lodash') }
+      })
+
+    // frontend side
+    addImports(list)
+
+    // backend side
+    nuxt.hook('nitro:config', (content) => {
+      if (!content.imports) {
+        content.imports = {
+          imports: list
+        }
+        return
       }
-    }
+
+      if (!content.imports.imports) {
+        content.imports.imports = list
+        return
+      }
+
+      content.imports.imports.push(...list)
+    })
   }
 })
