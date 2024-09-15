@@ -1,7 +1,7 @@
 {
   "name": "nuxt-lodash",
   "version": "2.5.3",
-  "packageManager": "pnpm@8.9.2",
+  "packageManager": "pnpm@8.15.9",
   "description": "Lodash for Nuxt",
   "keywords": [
     "nuxt",
@@ -38,8 +38,8 @@
     "semantic-release": "semantic-release"
   },
   "dependencies": {
-    "@nuxt/kit": "^3.8.0",
-    "@types/lodash-es": "^4.17.10",
+    "@nuxt/kit": "^3.13.2",
+    "@types/lodash-es": "^4.17.12",
     "lodash-es": "^4.17.21"
   },
   "devDependencies": {
@@ -48,7 +48,7 @@
     "@semantic-release/git": "^10.0.1",
     "conventional-changelog-conventionalcommits": "^5.0.0",
     "eslint": "latest",
-    "nuxt": "^3.8.0",
+    "nuxt": "^3.13.2",
     "semantic-release": "^20.1.3"
   }
 }
